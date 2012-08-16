@@ -1,6 +1,9 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+target/*
+.classpath
+.DS_Store
+.settings/*
+perfStats.log
+bin/*
+.project
+/.settings
+/.target

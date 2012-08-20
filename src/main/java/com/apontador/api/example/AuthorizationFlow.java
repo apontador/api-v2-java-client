@@ -21,7 +21,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
  * Simple example that shows how to get OAuth 2.0 access token from Apontador API
  * using Leeloo OAuth library
  */
-public class App {
+public class AuthorizationFlow {
 
     public static void main(String[] args) throws OAuthSystemException, IOException {
 

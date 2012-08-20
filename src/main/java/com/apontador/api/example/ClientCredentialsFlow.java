@@ -10,8 +10,6 @@ import net.smartam.leeloo.client.request.OAuthClientRequest;
 import net.smartam.leeloo.client.response.OAuthJSONAccessTokenResponse;
 import net.smartam.leeloo.common.exception.OAuthProblemException;
 import net.smartam.leeloo.common.exception.OAuthSystemException;
-import net.smartam.leeloo.common.message.types.GrantType;
-import net.smartam.leeloo.common.message.types.ResponseType;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;

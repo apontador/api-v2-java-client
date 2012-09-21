@@ -25,9 +25,8 @@ public class ClientCredentialsFlow {
 
         try {
         	
-
             OAuthClientRequest request = OAuthClientRequest
-                    .tokenLocation("http://ec2-75-101-246-209.compute-1.amazonaws.com:8080/api/oauth/token")
+                    .tokenLocation("http://localhost:8080/api/oauth/token")
                     .setParameter("grant_type", "client_credentials")
                     .setClientId("my-client-with-secret")
                     .setClientSecret("secret")
@@ -43,7 +42,7 @@ public class ClientCredentialsFlow {
  
             //get protected resource
             DefaultHttpClient httpClient = new DefaultHttpClient();
-    		HttpGet getRequest = new HttpGet("http://ec2-75-101-246-209.compute-1.amazonaws.com:8080/api/places/nottinghill");
+    		HttpGet getRequest = new HttpGet("http://localhost:8080/api/search/?q=lbsid:C40326655A133U133F");
     		getRequest.addHeader("accept", "application/json");
     		getRequest.addHeader("authorization", "Bearer " + oAuthResponse.getAccessToken());
      

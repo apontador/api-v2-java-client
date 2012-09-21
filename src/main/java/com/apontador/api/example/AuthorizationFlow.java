@@ -28,7 +28,7 @@ public class AuthorizationFlow {
         try {
         	
             OAuthClientRequest request = OAuthClientRequest
-                .authorizationLocation("http://ec2-75-101-246-209.compute-1.amazonaws.com:8080/api/oauth/authorize")
+                .authorizationLocation("http://localhost:8080/api/oauth/authorize")
                 .setClientId("my-trusted-client-with-secret")
                 .setRedirectURI("http://localhost:8080/")
                 .setScope("read")
@@ -44,7 +44,7 @@ public class AuthorizationFlow {
             String code = br.readLine();
 
             request = OAuthClientRequest
-                .tokenLocation("http://ec2-75-101-246-209.compute-1.amazonaws.com:8080/api/oauth/token")
+                .tokenLocation("http://localhost:8080/api/oauth/token")
                 .setGrantType(GrantType.AUTHORIZATION_CODE)
                 .setCode(code)
                 .setClientId("my-trusted-client-with-secret")
@@ -61,7 +61,7 @@ public class AuthorizationFlow {
  
             //get protected resource
             DefaultHttpClient httpClient = new DefaultHttpClient();
-    		HttpGet getRequest = new HttpGet("http://ec2-75-101-246-209.compute-1.amazonaws.com:8080/api/places/nottinghill");
+    		HttpGet getRequest = new HttpGet("http://localhost:8080/api/places/M25GJ288");
     		getRequest.addHeader("accept", "application/json");
     		getRequest.addHeader("authorization", "Bearer " + oAuthResponse.getAccessToken());
      
